@@ -1,0 +1,13 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+html,
+body {
+	@apply h-full;
+	background-color: #f8f8ff;
+}
+
+#__next {
+	@apply flex min-h-full;
+}

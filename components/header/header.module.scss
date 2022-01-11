@@ -1,0 +1,22 @@
+.shadow {
+  font-size: 48px;
+  color: #f8f8ff;
+  font-family: Arvo;
+  font-weight: bold;
+  text-shadow:
+    -2px -2px 0 #222,
+    2px -2px 0 #222,
+    -2px 2px 0 #222,
+    2px 2px 0 #222,
+    3px 3px 0 #f8f8ff,
+    4px 4px 0 #f8f8ff,
+    5px 5px 0 #f8f8ff,
+    6px 6px 0 #f8f8ff;
+  line-height: 0.9em;
+  letter-spacing: 0.1em;
+  transform: scaleY(0.8);
+  -webkit-transform: scaleY(0.8);
+  -moz-transform: scaleY(0.8);
+  margin:0;
+  text-align: center;
+}
