@@ -5,7 +5,7 @@ export function Footer() {
         <span>Tack BLOG</span>
       </div>
       <div className="text-right mr-4">
-        <p className="copyright text-gray-200">&copy; 2022 Tack</p>
+        <p className="copyright text-gray-200">&copy; 2022 TACK</p>
       </div>
     </div>
   )

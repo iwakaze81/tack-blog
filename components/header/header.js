@@ -6,13 +6,13 @@ export function Header() {
 
   return (
     <div 
-      className="w-full h-40 flex justify-center items-center bg-gray-800"
+      className="w-full h-40 flex justify-center items-center bg-gradient-to-b from-gray-900 to-gray-800"
       onClick={() => {
         router.push('/')
       }}
     >
       <div>
-        <span className={styles.shadow}>Tack BLOG</span>
+        <span className={styles.shadow}>TACK BLOG</span>
       </div>
     </div>
   )

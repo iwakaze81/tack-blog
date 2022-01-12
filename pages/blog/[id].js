@@ -1,12 +1,38 @@
+import hljs from 'highlight.js/lib/core';
+import javascript from 'highlight.js/lib/languages/javascript';
+import 'highlight.js/styles/github-dark.css';
+import { useEffect } from 'react';
+
 import { client } from "../../lib/client";
+import { DayJs } from "../../utility/date";
+
+import styles from './id.module.scss';
+
+// どの言語をハイライトしたいかを登録
+hljs.configure()
+hljs.registerLanguage('javascript', javascript);
 
 export default function Article({ blog }) {
+  let publishedAt = DayJs(blog.publishedAt).format('YYYY年M月D日')
+  let updatedAt = ''
+  if (blog.updatedAt !== blog.publishedAt) {
+    updatedAt = DayJs(blog.updatedAt).format(' (更新日 M月D日)')
+  }
+  
+  useEffect(() => {
+    hljs.highlightAll();
+  }, []);
+
   return (
-    <main className="min-h-screen" >
-      <h1>{blog.title}</h1>
-      <p>{blog.publishedAt}</p>
+    <main className="min-h-screen m-6">
+      <div className="mb-2">
+        <p className="text-3xl font-bold mb-2">{blog.title}</p>
+        <p className="font-medium text-gray-700">{publishedAt} {updatedAt}</p>
+      </div>
+      <hr className="mb-4 border"></hr>
       <div
         dangerouslySetInnerHTML={{ __html: `${blog.body}` }}
+        className={styles.blog_content}
       ></div>
     </main>
   )
