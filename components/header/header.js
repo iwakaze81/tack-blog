@@ -6,7 +6,7 @@ export function Header() {
 
   return (
     <div 
-      className="w-full h-40 flex justify-center items-center bg-gradient-to-b from-gray-900 to-gray-800"
+      className="w-full h-40 flex text-5xl justify-center items-center bg-gradient-to-b from-gray-900 to-gray-800"
       onClick={() => {
         router.push('/')
       }}
