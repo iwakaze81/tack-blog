@@ -12,6 +12,7 @@ export default function Home({ blog }) {
           image={blog.image}
           publishedAt={blog.publishedAt}
           updatedAt={blog.updatedAt}
+          categorys={blog.categorys}
         />
       })}
     </main>

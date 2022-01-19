@@ -1,6 +1,7 @@
 import { DayJs } from "../../utility/date"
 import { useRouter } from "next/router"
 import { ImageBox } from "../box/image_box"
+import { CategoryChip } from "../chip/category_chip"
 
 export function ArticleCard(props) {
   const router = useRouter()
@@ -11,10 +12,10 @@ export function ArticleCard(props) {
   if (props.updatedAt !== props.publishedAt) {
     updatedAt = DayJs(props.updatedAt).format(' (更新日 M月D日)')
   }
-  
+
   return (
     <div
-      className="h-56 mb-1 bg-white shadow-xl rounded cursor-pointer"
+      className="h-60 mb-1 bg-white shadow-xl rounded cursor-pointer"
       onClick={() => {
         router.push(`/blog/${props.id}`)
       }}
@@ -25,12 +26,22 @@ export function ArticleCard(props) {
       />
       <div className="m-4">
         <p className="text-sm mb-1">
-          {publishedAt} 
+          {publishedAt}
           {updatedAt}
         </p>
         <p className="font-semibold underline whitespace-nowrap overflow-hidden overflow-ellipsis">
           {props.title}
         </p>
+        <div className="flex mt-1">
+          {
+            props.categorys.map((category => {
+              return <CategoryChip
+                key={category.id}
+                category={category.category}
+              />
+            }))
+          }
+        </div>
       </div>
     </div>
   )
