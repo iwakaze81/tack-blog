@@ -1,6 +1,7 @@
 import hljs from 'highlight.js/lib/core';
 import javascript from 'highlight.js/lib/languages/javascript';
 import 'highlight.js/styles/github-dark.css';
+import { NextSeo } from 'next-seo';
 import { useEffect } from 'react';
 import { CategoryChip } from '../../components/chip/category_chip';
 
@@ -25,30 +26,33 @@ export default function Article({ blog }) {
   }, []);
 
   return (
-    <main className="min-h-screen m-6 mb-10">
-      <div className="mb-2">
-        <p className="text-3xl font-bold mb-2">{blog.title}</p>
-        <p className="font-medium text-gray-700">{publishedAt} {updatedAt}</p>
-        <div className='flex mt-2 mb-3'>
-          <p className='text-sm mr-2'>
-            カテゴリ : 
-          </p>
-          {
-            blog.categorys.map((category) => {
-              return <CategoryChip
-                key={category.id}
-                category={category.category}
-              />
-            })
-          }
+    <>
+      <NextSeo title={blog.title} description={blog.title} />
+      <main className="min-h-screen m-6 mb-10">
+        <div className="mb-2">
+          <p className="text-3xl font-bold mb-2">{blog.title}</p>
+          <p className="font-medium text-gray-700">{publishedAt} {updatedAt}</p>
+          <div className='flex mt-2 mb-3'>
+            <p className='text-sm mr-2'>
+              カテゴリ : 
+            </p>
+            {
+              blog.categorys.map((category) => {
+                return <CategoryChip
+                  key={category.id}
+                  category={category.category}
+                />
+              })
+            }
+          </div>
         </div>
-      </div>
-      <hr className="mb-4 border"></hr>
-      <div
-        dangerouslySetInnerHTML={{ __html: `${blog.body}` }}
-        className={styles.blog_content}
-      ></div>
-    </main>
+        <hr className="mb-4 border"></hr>
+        <div
+          dangerouslySetInnerHTML={{ __html: `${blog.body}` }}
+          className={styles.blog_content}
+        ></div>
+      </main>
+    </>
   )
 }
 
