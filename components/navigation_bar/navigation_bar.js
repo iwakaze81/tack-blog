@@ -23,20 +23,18 @@ export function NavigationBar() {
   }, [fetchCategory])
 
   return (
-    <div className="hidden xl:block lg:block md:block w-64 mt-8 mb-16 mr-4">
+    <div className="hidden xl:block lg:block md:block w-1/4 mt-8 mb-16 mr-4">
       <div className="bg-white shadow-xl rounded p-2">
         <p className="font-bold">カテゴリ</p>
         <div className="m-2">
           {
             categorys.length !== 0 ?
               categorys.map((category, index) => {
-                return (
-                  <div key={ids[index]} className="mb-0.5">
+                return <div key={ids[index]} className="mb-0.5">
                     <p>
                       {category}
                     </p>
                   </div>
-                )
               }) : <></>
           }
         </div>

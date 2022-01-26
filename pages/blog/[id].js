@@ -28,7 +28,7 @@ export default function Article({ blog }) {
   return (
     <>
       <NextSeo title={blog.title} description={blog.title} />
-      <main className="min-h-screen m-6 mb-10">
+      <main className="main w-full md:w-3/4 min-h-screen p-6 pb-16">
         <div className="mb-2">
           <p className="text-3xl font-bold mb-2">{blog.title}</p>
           <p className="font-medium text-gray-700">{publishedAt} {updatedAt}</p>
