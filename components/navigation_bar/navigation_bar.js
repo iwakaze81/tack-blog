@@ -30,15 +30,13 @@ export function NavigationBar() {
           {
             categorys.length !== 0 ?
               categorys.map((category, index) => {
-                const key = categorys[index] + ids[index]
-                console.log(key)
-                return <>
-                  <div key={key} className="mb-0.5">
+                return (
+                  <div key={ids[index]} className="mb-0.5">
                     <p>
                       {category}
                     </p>
                   </div>
-                </>
+                )
               }) : <></>
           }
         </div>
