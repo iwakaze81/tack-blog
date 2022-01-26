@@ -1,6 +1,7 @@
 import { DefaultSeo } from 'next-seo'
 import { Footer } from '../components/footer/footer'
 import { Header } from '../components/header/header'
+import { NavigationBar } from '../components/navigation_bar/navigation_bar'
 import '../styles/globals.scss'
 
 function MyApp({ Component, pageProps }) {
@@ -31,13 +32,17 @@ function MyApp({ Component, pageProps }) {
           ]
         }}
       />
-      <div className="w-full min-h-screen">
-        <div className='flex-grow'>
-          <Header />
-          <Component {...pageProps} />
+        <div className="w-full min-h-screen">
+          <div className='flex-grow'>
+            <Header />
+            <div className='flex w-full'>
+              <Component {...pageProps} />
+              <NavigationBar />
+            </div>
+          </div>
+          <Footer />
         </div>
-        <Footer/>
-      </div>
+       
     </>
   )
 }

@@ -3,7 +3,7 @@ import { client } from "../lib/client";
 
 export default function Home({ blog }) {
   return (
-    <main className="main p-8 pb-14 grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4">
+    <main className="w-full main p-8 pb-14 grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-4">
       {blog.map((blog) => {
         return <ArticleCard
           key={blog.id}
@@ -21,7 +21,6 @@ export default function Home({ blog }) {
 
 export const getStaticProps = async () => {
   const data = await client.get({ endpoint: "blog" });
-
   return {
     props: {
       blog: data.contents,

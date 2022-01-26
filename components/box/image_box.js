@@ -7,7 +7,7 @@ export function ImageBox(props) {
       props.art === '')) {
     return (
       <div
-        className="h-36 w-full flex rounded-t justify-center items-center bg-gray-300"
+        className="h-36 w-full md:w-1/3 lg:w-full flex sm:rounded-t md:rounded-tr-none md:rounded-l lg:rounded-t lg:rounded-bl-none justify-center items-center bg-gray-300"
       >
         <div className="justify-center">
           <BsImage className="text-6xl ml-1 mb-1" />
@@ -18,7 +18,7 @@ export function ImageBox(props) {
   } else {
     return (
       <div
-        className="h-36 w-full rounded-t bg-blue-300 bg-image"
+        className="h-36 w-full md:w-1/3 lg:w-full sm:rounded-t md:rounded-tr-none md:rounded-l lg:rounded-t lg:rounded-bl-none  bg-blue-300 bg-image"
       > 
         <style jsx>{`
           .bg-image {

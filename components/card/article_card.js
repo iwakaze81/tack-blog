@@ -15,7 +15,7 @@ export function ArticleCard(props) {
 
   return (
     <div
-      className="h-60 mb-1 bg-white shadow-xl rounded cursor-pointer"
+      className="lg:inline-block md:flex mb-1 bg-white shadow-xl rounded cursor-pointer"
       onClick={() => {
         router.push(`/blog/${props.id}`)
       }}
@@ -24,10 +24,9 @@ export function ArticleCard(props) {
         src={url}
         alt={props.id}
       />
-      <div className="m-4">
+      <div className="m-4 w-full">
         <p className="text-sm mb-1">
-          {publishedAt}
-          {updatedAt}
+          {publishedAt} {updatedAt}
         </p>
         <p className="font-semibold underline whitespace-nowrap overflow-hidden overflow-ellipsis">
           {props.title}
